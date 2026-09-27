@@ -13,3 +13,5 @@ wheels/
 *.xls
 *.pdf
 *.pptx
+
+*.env
