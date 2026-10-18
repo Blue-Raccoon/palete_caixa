@@ -20,8 +20,15 @@ BUCKET = os.getenv("S3_BUCKET", "palete-caixa-solucoes")
 REGION = os.getenv("REGION", "us-east-1")
 
 
+
+AWS_ACESS_KEY_ID=os.getenv("AWS_ACESS_KEY_ID")
+AWS_SECRET_ACESS_KEY=os.getenv("AWS_SECRET_ACESS_KEY")
+
+
 def _cliente():
-    return boto3.client("s3", region_name=REGION)
+    return boto3.client("s3", region_name=REGION,
+                        aws_access_key_id=AWS_ACESS_KEY_ID,
+                        aws_secret_access_key=AWS_SECRET_ACESS_KEY)
 
 
 # ─── Escrita ──────────────────────────────────────────────────────────────────
